@@ -1,5 +1,6 @@
 import * as t from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
+import * as dat from 'lil-gui';
 import gsap from 'gsap'
 
 
@@ -14,6 +15,8 @@ const config = {
     }
 }
 
+const gui = new dat.GUI()
+
 // scene and content
 const scene = new t.Scene()
 
@@ -22,9 +25,21 @@ const axesHelper = new t.AxesHelper(2)
 scene.add(axesHelper)
 
 const boxGeometry = new t.BoxGeometry(1, 1, 1)
-const boxMaterial = new t.MeshBasicMaterial({color: 0xff0000})
+
+
+const boxParameters = {color: 0xff0000}
+gui.addColor(boxParameters, "color").onChange(() => {
+    boxMaterial.color.set(boxParameters.color)
+})
+
+const boxMaterial = new t.MeshBasicMaterial(boxParameters)
 const box = new t.Mesh(boxGeometry, boxMaterial)
 box.position.set(0.7, -0.6, 1)
+
+gui.add(box.position, 'x', -3, 3, 0.01)
+gui.add(box.position, 'y', -3, 3, 0.01)
+gui.add(box.position, 'z').min(-3).max(3).step(0.01).name("Box1-Z")
+
 
 const boxGeometry2 = new t.BoxGeometry(1, 1, 1)
 const boxMaterial2 = new t.MeshBasicMaterial({color: 0xff0000, wireframe: true})
@@ -72,7 +87,7 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
 
-window.addEventListener('mouseover', (event)  => {
+window.addEventListener('mouseover', (event) => {
     config.cursor.x = (event.clientX / config.sizes.width) - 0.5
     config.cursor.y = -1 * (event.clientX / config.sizes.height - 0.5)
 })
@@ -101,29 +116,19 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 })
 
-window.addEventListener('dblclick', () =>
-{
+window.addEventListener('dblclick', () => {
     const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
 
-    if(!fullscreenElement)
-    {
-        if(canvas.requestFullscreen)
-        {
+    if (!fullscreenElement) {
+        if (canvas.requestFullscreen) {
             canvas.requestFullscreen()
-        }
-        else if(canvas.webkitRequestFullscreen)
-        {
+        } else if (canvas.webkitRequestFullscreen) {
             canvas.webkitRequestFullscreen()
         }
-    }
-    else
-    {
-        if(document.exitFullscreen)
-        {
+    } else {
+        if (document.exitFullscreen) {
             document.exitFullscreen()
-        }
-        else if(document.webkitExitFullscreen)
-        {
+        } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen()
         }
     }

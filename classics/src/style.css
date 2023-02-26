@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.scene {
+    position: fixed;
+    outline: none;
+    top: 0;
+    left: 0;
+}

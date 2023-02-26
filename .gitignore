@@ -2,9 +2,12 @@
 **/node_modules/**
 node_modules
 *.log### Java template
+.idea/sonarlint
 # Compiled class file
 *.class
 
+.DS_Store
+**/.DS_Store
 # Log file
 
 # BlueJ files

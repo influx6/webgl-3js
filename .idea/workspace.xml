@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bf62ee1a-0c50-4d99-9114-04095537fb94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/galaxy-generator/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/galaxy-generator/src/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +105,7 @@
       <workItem from="1677491079951" duration="5963000" />
       <workItem from="1678009303447" duration="21922000" />
       <workItem from="1678890886177" duration="3213000" />
+      <workItem from="1679057334499" duration="5950000" />
     </task>
     <servers />
   </component>

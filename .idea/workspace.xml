@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf62ee1a-0c50-4d99-9114-04095537fb94" name="Changes" comment="" />
+    <list default="true" id="bf62ee1a-0c50-4d99-9114-04095537fb94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +20,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="sw7d5c63" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,6 +56,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/alexewetumo/Labs/webgl-3js/materials/static&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -103,6 +109,15 @@
       <workItem from="1678009303447" duration="21922000" />
       <workItem from="1678890886177" duration="3213000" />
       <workItem from="1679057334499" duration="13448000" />
+      <workItem from="1679223347556" duration="624000" />
+      <workItem from="1679404524799" duration="598000" />
+      <workItem from="1679703480641" duration="615000" />
+      <workItem from="1684761294184" duration="36000" />
+      <workItem from="1684761507818" duration="74000" />
+      <workItem from="1689585747615" duration="499000" />
+      <workItem from="1689586263358" duration="2119000" />
+      <workItem from="1689588709863" duration="1094000" />
+      <workItem from="1690641212411" duration="7000" />
     </task>
     <servers />
   </component>

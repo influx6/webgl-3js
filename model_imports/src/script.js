@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'lil-gui'
+import { GLTFLoader  } from 'three/examples/jsm/loaders/GLTFLoader'
 
 THREE.ColorManagement.enabled = false
 
@@ -30,6 +31,46 @@ const floor = new THREE.Mesh(
 floor.receiveShadow = true
 floor.rotation.x = - Math.PI * 0.5
 scene.add(floor)
+
+/** Models
+ * */
+const gltfLoader = new GLTFLoader()
+gltfLoader.load(
+    '/models/Duck/glTF/Duck.gltf',
+    (gltf) =>
+    {
+        console.log('success')
+        scene.add(gltf.scene.children[0])
+    },
+    (progress) =>
+    {
+        console.log('progress')
+        console.log(progress)
+    },
+    (error) =>
+    {
+        console.log('error')
+        console.log(error)
+    }
+)
+
+let mixer = null
+
+gltfLoader.load(
+    '/models/Fox/glTF/Fox.gltf',
+    (gltf) =>
+    {
+        gltf.scene.scale.set(0.025, 0.025, 0.025)
+        gltf.scene.position.set(2,0,1)
+
+        scene.add(gltf.scene)
+
+        mixer = new THREE.AnimationMixer(gltf.scene)
+        const action = mixer.clipAction(gltf.animations[0])
+        action.play()
+
+    }
+)
 
 /**
  * Lights
@@ -110,6 +151,10 @@ const tick = () =>
 
     // Update controls
     controls.update()
+
+    if (mixer) {
+        mixer.update(deltaTime)
+    }
 
     // Render
     renderer.render(scene, camera)
